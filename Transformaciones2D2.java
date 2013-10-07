@@ -15,8 +15,6 @@ class eventoRatonclick extends MouseAdapter{
 			Transformaciones2D2 obj;
 			public eventoRatonclick(Transformaciones2D2 T){
 			obj=T;
-			
-			
 		}
 		public void mouseClicked(MouseEvent me){
 			int noclicks=me.getClickCount();
@@ -35,10 +33,8 @@ class eventoRatonclick extends MouseAdapter{
 				if(cry>obj.objf.miny){
 					obj.objf.rotar_sentido_punto(10.0);
 				}
-				
+			
 			}
-			
-			
 			
 		}
 		public void mousePressed(MouseEvent me) {
@@ -49,12 +45,8 @@ class eventoRatonclick extends MouseAdapter{
 			/*if(dentro)
 				JOptionPane.showMessageDialog(null, "Precionaste dentro de la figura");
 			else
-				JOptionPane.showMessageDialog(null, "Precionaste fuera de la figura");*/
-					
+				JOptionPane.showMessageDialog(null, "Precionaste fuera de la figura");*/				
 	}
-		
-
-		
 }
 //cuadro de dialogo personzalido
 class Crotar extends JDialog{
@@ -117,9 +109,7 @@ class Crotar extends JDialog{
 			public void actionPerformed(ActionEvent arg0) {
 				sel[0]=0;
 				sel[1]=0;
-				setVisible(false);
-				
-				
+				setVisible(false);	
 			}
 		});		
 		
@@ -150,8 +140,6 @@ class eventoRatonarrastre extends MouseMotionAdapter{
 			obj.objf.trasladar(despx, despy);
 			obj.repaint();
 		}
-		
-		
 	}
 }
 
@@ -190,13 +178,7 @@ public class Transformaciones2D2 extends JPanel implements MouseWheelListener {
 		vent.setLocationRelativeTo(null);
 		op = -1;
 		objf = new Figura2(b);
-		//dibujarb = new JButton("Dibujar");
-		//escalar = new JButton("Escalar");
-		//deformar = new JButton("Defromar");
-		//trasladar = new JButton("Trasladar");
-		//rotarc=new JButton("Rotar En Contra");
-		//rotars=new JButton("Rotar Sentido");
-		//reflexion=new JButton("Reflexion");
+		
 		/*dibujarb.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				op = -1;
@@ -322,24 +304,7 @@ public class Transformaciones2D2 extends JPanel implements MouseWheelListener {
 			}
 		});
 		*/
-
-
-
-
-
-		/*JPanel abajo = new JPanel();
-		abajo.setLayout(new FlowLayout());
-		abajo.add(dibujarb);
-		abajo.add(escalar);
-		abajo.add(deformar);
-		abajo.add(trasladar);
-		abajo.add(rotarc);
-		abajo.add(rotars);
-		abajo.add(reflexion);
-		cont.add(abajo, BorderLayout.SOUTH);
-		*/
 		objf = new Figura2(b);
-		
 		vent.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		vent.setResizable(false);
 		this.addMouseListener(new eventoRatonclick(Transformaciones2D2.this));
@@ -349,7 +314,6 @@ public class Transformaciones2D2 extends JPanel implements MouseWheelListener {
 		//agregar acciones dela barra de herrameintas
 		URL rutaa1=getClass().getResource("rec/zoombarra.png");
 		Action a1=new AbstractAction("Escalar",new ImageIcon(rutaa1)) {
-			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
@@ -376,14 +340,11 @@ public class Transformaciones2D2 extends JPanel implements MouseWheelListener {
 		a3.putValue(Action.SHORT_DESCRIPTION, "Restaurar la figura");
 		a3.putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_E,InputEvent.ALT_MASK));
 		barrah.add(a3);
-		
-		
 		a1.putValue(Action.SHORT_DESCRIPTION, "Escala una figura en 0.1");
 		a1.putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_E,InputEvent.ALT_MASK));
 		barrah.add(a1);
 		URL rutaa2=getClass().getResource("rec/shapes-move-backwardbarra.png");
 		Action a2=new AbstractAction("Rotar",new ImageIcon(rutaa2)) {
-			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
@@ -396,29 +357,20 @@ public class Transformaciones2D2 extends JPanel implements MouseWheelListener {
 		a2.putValue(Action.SHORT_DESCRIPTION, "Rotar la figura en 1°");
 		a2.putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_E,InputEvent.ALT_MASK));
 		barrah.add(a2);
-		
-		
 		URL rutaa4=getClass().getResource("rec/shapes-move-backwardbarra.png");
 		Action a4=new AbstractAction("Salir",new ImageIcon(rutaa4)) {
-			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				System.exit(0);
 				repaint();
-				
-				
 			}
 		};
 		a4.putValue(Action.SHORT_DESCRIPTION, "Salir del programa");
 		a4.putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_E,InputEvent.ALT_MASK));
 		barrah.add(a4);
-		
 		cont.add(barrah,BorderLayout.EAST);
-		
 		vent.setVisible(true);
-		
-		
 	}
 	
 	public void hacerMenu() {
@@ -464,9 +416,7 @@ public class Transformaciones2D2 extends JPanel implements MouseWheelListener {
 		Trasladar.setIcon(new ImageIcon(rutat));
 		URL rutare=getClass().getResource("rec/shapes-flip-horizontal.png");
 		Reflejar.setIcon(new ImageIcon(rutare));
-		
-		
-		
+
 		//Acerca de
 		Autor=new JMenuItem("Autor");
 		URL rutaa=getClass().getResource("rec/about.png");
@@ -481,9 +431,7 @@ public class Transformaciones2D2 extends JPanel implements MouseWheelListener {
 		Acerca.add(Version);
 		Acerca.add(Ayuda);
 		//Poner Imagenes
-		
-		
-		
+				
 		//eventos
 		Salir.addActionListener(new ActionListener() {
 			
@@ -512,14 +460,11 @@ public class Transformaciones2D2 extends JPanel implements MouseWheelListener {
 					//rotar izq
 					objf.rotar_contra_punto(val[1]);
 				}
-				repaint();
-				
-				
+				repaint();	
 			}
 		});
 		
 		Restaurar.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
@@ -539,18 +484,7 @@ public class Transformaciones2D2 extends JPanel implements MouseWheelListener {
 				
 			}
 		});
-		
-		
-		
-		
-		
 	}
-	
-	
-	
-
-	
-
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		if (op==1)
@@ -560,18 +494,13 @@ public class Transformaciones2D2 extends JPanel implements MouseWheelListener {
 		}
 		else
 		objf.dibujarb(g);
-
 	}
-
 	public static void main(String[] args) {
-
 		double figxb[][] = new double[][] { { 200, 300 }, { 250, 200 },
 				{ 320, 200 }, { 320, 360 }, { 250, 360 }, { 250, 320 },
 				{ 200, 300 } };
-
 		new Transformaciones2D2(figxb);
 	}
-
 	@Override
 	public void mouseWheelMoved(MouseWheelEvent mw) {
 		// TODO Auto-generated method stub
