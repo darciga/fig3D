@@ -250,8 +250,19 @@ public class Principal3D extends JFrame implements MouseWheelListener
 				String mensaje="Acerca del autor \n"+
 						"\n Dante Omar Arciga Camarena"+
 						"\n 09420273"+
-						"\n";
+						"\n Github https://github.com/darciga";
 						mensajeAutor(mensaje);
+			}
+		});
+		Version.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				String mensaje="Versionado en Github \n"+
+						"\n Repositorio github"+
+						"\n https://github.com/darciga/fig3D";
+						mensajeVersion(mensaje);
 			}
 		});
 		
@@ -262,6 +273,9 @@ public class Principal3D extends JFrame implements MouseWheelListener
 	}
 	public void mensajeAutor(String mensaje){
 		JOptionPane.showMessageDialog(this, mensaje,"Autor",JOptionPane.INFORMATION_MESSAGE);
+	}
+	public void mensajeVersion(String mensaje){
+		JOptionPane.showMessageDialog(this, mensaje,"Version",JOptionPane.INFORMATION_MESSAGE);
 	}
 	
 	
