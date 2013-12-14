@@ -29,7 +29,7 @@ public class Principal3D extends JFrame implements MouseWheelListener
 	
 	public Principal3D(int fig[][], int sec[]) 
 	{
-		super ("Objetos en 3D");
+		super ("Letra en 3D");
 		setSize(700,500);
 		this.addMouseWheelListener(this);
 		sliderx=new JSlider(JSlider.HORIZONTAL, -360, 360, 0);
